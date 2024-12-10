@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cohetes - TecnoPlace</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Fondo negro */
+            color: white; /* Color de texto blanco */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Asegura que empiece desde arriba */
+            text-align: center;
+            height: 100%; /* No ocupa toda la altura de la ventana, solo lo necesario */
+        }
+        h1, h2 {
+            font-size: 50px; /* Título en 50px */
+            margin-top: 40px;
+        }
+        .contenedor {
+            width: 80%;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column; /* Centrado de la imagen y el texto */
+            align-items: center; /* Centrado horizontal */
+        }
+        .texto {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px; /* Ancho máximo del texto */
+            margin: 20px 0;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .subrayado {
+            text-decoration: underline;
+            cursor: pointer;
+            color: #5dade2; /* Azul para las palabras subrayadas */
+        }
+        .subrayado:hover {
+            color: #3498db; /* Azul más oscuro al pasar el ratón */
+        }
+        .cohetes-lista {
+            margin-top: 40px;
+            font-size: 18px;
+            text-align: center; /* Centra el texto de la lista de cohetes */
+            width: 80%;
+        }
+        .cohetes-lista h2 {
+            font-size: 30px;
+            margin-bottom: 40px;
+        }
+        .cohete {
+            margin-bottom: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        /* Estilos para la barra superior */
+        .barra-superior {
+            display: flex;
+            align-items: center;
+            background-color: #111;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .header-text {
+            font-size: 20px;
+            margin-right: 30px;
+            color: blue;
+        }
+        .nav-link {
+            margin: 0 15px;
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function mostrarInfo(term) {
+            let info = '';
+            if (term === 'propulsion') {
+                info = 'La propulsión de un cohete se logra mediante el uso de motores a chorro que expulsan gases a alta velocidad, lo que genera un empuje que hace que el cohete se desplace hacia adelante.';
+            }
+            if (term === 'combustible') {
+                info = 'Los cohetes suelen utilizar combustibles líquidos o sólidos que se queman para producir la energía necesaria para el despegue y la aceleración.';
+            }
+            alert(info); // Muestra la explicación en una alerta
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Barra superior con el logo, texto y enlaces -->
+    <div class="barra-superior">
+        <div class="logo"></div>
+        <div class="header-text">TecnoPlace</div>
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="pagina2.html" class="nav-link">Física</a>
+        <a href="elctricidad.html" class="nav-link">Electricidad i magnetismo</a>
+        <a href="cientificos.html" class="nav-link">Científicos y sus descubrimientos</a>
+        <a href="particula.html" class="nav-link">Partículas</a>
+    </div>
+
+    <!-- Título y contenido de Cohetes -->
+    <div class="seccion">
+        <h1>Cohetes</h1>
+        <div class="contenedor">
+            <div class="texto">
+                <p>
+                    Los cohetes son vehículos diseñados para viajar a través del espacio. Funcionan bajo el principio de la acción y reacción, según la tercera ley de Newton, y utilizan motores de propulsión que expelen gases a alta velocidad para generar empuje. Los cohetes son fundamentales en la exploración espacial, ya que permiten lanzar satélites, naves espaciales y misiones a otros planetas.
+                    En la ingeniería de cohetes, se consideran aspectos cruciales como la <span class="subrayado" onclick="mostrarInfo('propulsion')">propulsión</span>, la <span class="subrayado" onclick="mostrarInfo('combustible')">composición del combustible</span> y las etapas del lanzamiento, entre otros factores.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Título centrado de los cohetes hechos por la NASA -->
+    <div class="cohetes-lista">
+        <h2>Algunos cohetes hechos por la NASA</h2>
+
+        <div class="cohete">
+            <h3>Saturn V</h3>
+            <p>El Saturn V es probablemente el cohete más famoso de la NASA, utilizado para las misiones Apollo, incluidas las misiones que llevaron a los astronautas a la Luna. Con una altura de 110 metros, fue el cohete más grande y potente jamás construido y utilizado hasta la fecha.</p>
+        </div>
+
+        <div class="cohete">
+            <h3>Atlas V</h3>
+            <p>El Atlas V es un cohete lanzador de uso múltiple, utilizado para lanzar satélites y sondas espaciales. Ha sido un pilar en la exploración espacial moderna de la NASA, lanzando misiones como la sonda Mars Science Laboratory (Curiosity) hacia Marte.</p>
+        </div>
+
+        <div class="cohete">
+            <h3>Delta IV</h3>
+            <p>El Delta IV es un sistema de lanzamiento de cohetes utilizado por la NASA para una variedad de misiones, incluyendo el lanzamiento de satélites y sondas espaciales. Es conocido por su fiabilidad y flexibilidad para realizar lanzamientos de diferentes tipos de carga útil.</p>
+        </div>
+
+        <div class="cohete">
+            <h3>Space Shuttle</h3>
+            <p>El Space Shuttle, o transbordador espacial, fue un vehículo reutilizable que permitió a la NASA realizar vuelos espaciales regulares entre 1981 y 2011. Su principal función era transportar astronautas y material al espacio y regresar a la Tierra.</p>
+        </div>
+
+        <div class="cohete">
+            <h3>Falcon Heavy</h3>
+            <p>Aunque no es un cohete de la NASA directamente, el Falcon Heavy de SpaceX es crucial para la NASA en términos de colaboración privada. Se utiliza para misiones que requieren lanzar grandes cargas al espacio, como la misión Artemis de regreso a la Luna.</p>
+        </div>
+    </div>
+
+</body>
+</html>

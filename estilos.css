@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #000000;
+    padding: 0px;
+    font-size: xx-large;
+    color:aliceblue
+
+}
+.contenedor {
+    position: relative; /* Hace que los elementos hijos se posicionen en relación al contenedor */
+    display: inline-block; /* Ajusta el tamaño del contenedor al contenido */
+  }
+  
+  .contenedor img {
+    display: block; /* Asegura que la imagen no tenga espacio extra */
+  }
+  
+  .texto-centrado {
+    position: absolute; /* Posiciona el texto sobre el GIF */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el texto al centro exacto */
+    color: white; /* Cambia el color del texto */
+    font-size: 50px; /* Ajusta el tamaño de la letra */
+    font-weight: bold; /* Hace el texto más grueso */
+    text-shadow: 2px 2px 4px rgba(31, 41, 152, 0.7); /* Agrega sombra para mayor visibilidad */
+  }
+  h1 {
+    font-size: 36px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
+  
+  .subtitulo {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: -50px; /* Ajusta la distancia entre el título y el subtítulo */
+  }
+  
+  
+  
+  
+  
+  
+  

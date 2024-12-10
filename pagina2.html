@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Física y Física Cuántica - TecnoPlace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .barra-superior {
+            display: flex;
+            align-items: center;
+            background-color: #111;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .header-text {
+            font-size: 20px;
+            margin-right: 30px;
+            color:blue;
+        }
+        .nav-link {
+            margin: 0 15px;
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        .contenido {
+            margin-top: 60px;
+            padding: 20px;
+        }
+        h1 {
+            color: #fff;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 18px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .important-word {
+            color: #3498db;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra superior con el logo, texto y enlaces -->
+    <div class="barra-superior">
+        <div class="logo"></div>
+        <div class="header-text">TecnoPlace</div>
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="particula.html" class="nav-link">Partículas</a>
+        <a href="elctricidad.html" class="nav-link">Electricidad i magnetismo</a>
+        <a href="cientificos.html" class="nav-link">Científicos y sus descubrimientos</a>
+        <a href="cohetes.html" class="nav-link">Cohetes</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="contenido">
+        <h1>Física</h1>
+        <p>
+            La física es la ciencia que estudia la materia, la energía y las interacciones fundamentales del universo. Se enfoca en entender cómo funcionan las leyes naturales que gobiernan el comportamiento de todo en el cosmos. A través de la física, comprendemos desde las partículas más pequeñas hasta los fenómenos más grandes, como el movimiento de los planetas. 
+            En la física, se exploran conceptos como la <span class="important-word" onclick="mostrarAlerta('partículas')">partícula</span>, la fuerza, la gravedad, la luz y muchas otras áreas que ayudan a explicar el mundo que nos rodea.
+        </p>
+
+        <h1>Física Cuántica</h1>
+        <p>
+            La física cuántica es una rama de la física que estudia los fenómenos a nivel subatómico. A diferencia de la física clásica, la física cuántica describe el comportamiento de partículas como electrones y fotones, que no siguen las leyes tradicionales de la física. En lugar de predecir con certeza el comportamiento de estas partículas, la física cuántica se basa en probabilidades.
+            Uno de los conceptos clave en la física cuántica es la <span class="important-word" onclick="mostrarAlerta('superposición')">superposición</span>, que significa que una partícula puede existir en varios estados a la vez hasta que se observe. Otro fenómeno interesante es el <span class="important-word" onclick="mostrarAlerta('entrelazamiento')">entrelazamiento</span> cuántico, donde las partículas pueden estar correlacionadas de tal forma que el estado de una afecta instantáneamente al estado de la otra, sin importar la distancia entre ellas.
+        </p>
+    </div>
+
+    <script>
+        function mostrarAlerta(palabra) {
+            var explicaciones = {
+                'partículas': 'Las partículas son las unidades básicas de la materia y la energía. Incluyen átomos, electrones, protones y más.',
+                'superposición': 'La superposición cuántica es un principio de la física cuántica donde una partícula puede existir en varios estados simultáneamente.',
+                'entrelazamiento': 'El entrelazamiento cuántico es un fenómeno donde dos partículas se correlacionan de manera que el estado de una afecta instantáneamente al de la otra.',
+            };
+            
+            alert(explicaciones[palabra] || 'Explicación no disponible.');
+        }
+    </script>
+
+</body>
+</html>

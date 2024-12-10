@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricidad y Magnetismo - TecnoPlace</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            color: white;
+            text-align: center;
+        }
+
+        /* Barra superior */
+        .barra-superior {
+            display: flex;
+            align-items: center;
+            background-color: #111;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .header-text {
+            font-size: 20px;
+            margin-right: 30px;
+            color: blue;
+        }
+        .nav-link {
+            margin: 0 15px;
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        .contenido {
+            margin-top: 80px;
+            padding: 20px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 18px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .important-word {
+            color: #3498db;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function mostrarAlerta(palabra) {
+            var explicaciones = {
+                'electricidad': 'La electricidad es una forma de energía que se produce por el movimiento de partículas cargadas, principalmente electrones. Es fundamental para el funcionamiento de numerosos dispositivos y sistemas en nuestra vida diaria.',
+                'carga': 'La carga eléctrica es una propiedad fundamental de la materia que causa la interacción electromagnética. Existen dos tipos: carga positiva y negativa.',
+                'corriente': 'La corriente eléctrica es el flujo de electrones a través de un conductor, y se mide en amperios.',
+                'voltaje': 'El voltaje, o diferencia de potencial, es la energía por unidad de carga que impulsa la corriente eléctrica a través de un circuito.',
+                'resistencia': 'La resistencia es la oposición al paso de corriente eléctrica, y depende del material, la longitud y el grosor del conductor.',
+                'magnetismo': 'El magnetismo es un fenómeno físico asociado a la interacción de partículas cargadas, como electrones y protones. Esta fuerza puede ser atractiva o repulsiva y es la base de la creación de imanes.',
+                'campo': 'El campo magnético es una región del espacio en la que una carga magnética experimenta una fuerza. Este campo es generado por imanes o corrientes eléctricas.',
+                'imanes': 'Los imanes son objetos que tienen la capacidad de atraer o repeler materiales ferromagnéticos, como el hierro. Tienen un campo magnético que actúa sobre otros imanes o materiales.',
+                'polaridad': 'La polaridad de un imán se refiere a sus dos extremos: el polo norte y el polo sur. Los polos de igual signo se repelen, mientras que los polos opuestos se atraen.',
+                'electromagnetismo': 'El electromagnetismo es la rama de la física que estudia la interacción entre campos eléctricos y magnéticos. Es la base de fenómenos como la inducción electromagnética y los motores eléctricos.'
+            };
+            
+            alert(explicaciones[palabra] || 'Explicación no disponible.');
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Barra superior con el logo, texto y enlaces -->
+    <div class="barra-superior">
+        <div class="logo"></div>
+        <div class="header-text">TecnoPlace</div>
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="pagina2.html" class="nav-link">Física</a>
+        <a href="particula.html" class="nav-link">Partículas</a>
+        <a href="cientificos.html" class="nav-link">Científicos y sus descubrimientos</a>
+        <a href="cohetes.html" class="nav-link">Cohetes</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="contenido">
+        <!-- Título y texto de Electricidad -->
+        <h1>Electricidad</h1>
+        <p>
+            La electricidad es una forma de energía que se produce por el movimiento de partículas cargadas, principalmente electrones. Esta energía es fundamental en nuestra vida diaria y permite el funcionamiento de innumerables dispositivos y sistemas. La electricidad puede manifestarse en dos formas principales: estática y dinámica. En la electricidad estática, las cargas se acumulan en un objeto, mientras que en la electricidad dinámica, las cargas se mueven a través de un conductor, lo que genera lo que conocemos como corriente eléctrica.
+        </p>
+        <p>
+            En los sistemas eléctricos, el flujo de electrones es impulsado por una diferencia de potencial, conocida como voltaje. Los electrones se mueven a través de un conductor, como un cable, y la cantidad de movimiento de estas partículas se mide en términos de corriente, que se expresa en amperios. La cantidad de corriente que fluye depende de la resistencia del conductor, que se refiere a la oposición al paso de los electrones. Cuanto mayor sea la resistencia, menos corriente pasará.
+        </p>
+        <p>
+            La ley de Ohm es una de las leyes fundamentales de la electricidad y establece la relación entre el voltaje, la corriente y la resistencia en un circuito. Según esta ley, la corriente que pasa por un conductor es directamente proporcional al voltaje e inversamente proporcional a la resistencia. Esta ecuación se expresa como I = V / R, donde I es la corriente, V es el voltaje y R es la resistencia.
+        </p>
+        <p>
+            La electricidad es utilizada en una variedad de aplicaciones, desde la iluminación y los electrodomésticos hasta las tecnologías más avanzadas como la informática, la telecomunicación y la medicina. Además, la generación de electricidad es un proceso crucial que se realiza a través de diversas fuentes, como las centrales hidroeléctricas, nucleares, solares y eólicas. La electricidad es, sin duda, una de las formas de energía más importantes y versátiles que tenemos.
+        </p>
+        <p>
+            Para entender mejor los conceptos básicos de la electricidad, puedes hacer clic en las palabras subrayadas para obtener más información sobre <span class="important-word" onclick="mostrarAlerta('electricidad')">electricidad</span>, <span class="important-word" onclick="mostrarAlerta('carga')">carga</span>, <span class="important-word" onclick="mostrarAlerta('corriente')">corriente</span>, <span class="important-word" onclick="mostrarAlerta('voltaje')">voltaje</span>, y <span class="important-word" onclick="mostrarAlerta('resistencia')">resistencia</span>.
+        </p>
+
+        <!-- Título y texto de Magnetismo -->
+        <h1>Magnetismo</h1>
+        <p>
+            El magnetismo es un fenómeno físico asociado a la interacción de partículas cargadas, como electrones y protones. Esta fuerza puede ser atractiva o repulsiva y es la base de la creación de imanes. Los imanes tienen un campo magnético que genera fuerzas sobre otros imanes o materiales magnéticos. 
+        </p>
+        <p>
+            Los imanes tienen dos polos, el polo norte y el polo sur. Los polos de igual signo se repelen, mientras que los polos opuestos se atraen. El campo magnético es una región del espacio donde una carga magnética experimenta una fuerza, y se genera tanto por imanes permanentes como por corrientes eléctricas. 
+        </p>
+        <p>
+            Para obtener más información sobre los conceptos relacionados con el magnetismo, haz clic en las palabras subrayadas para aprender más sobre <span class="important-word" onclick="mostrarAlerta('magnetismo')">magnetismo</span>, <span class="important-word" onclick="mostrarAlerta('campo')">campo magnético</span>, <span class="important-word" onclick="mostrarAlerta('imanes')">imanes</span>, <span class="important-word" onclick="mostrarAlerta('polaridad')">polaridad</span>.
+        </p>
+
+        <!-- Título y texto de Electromagnetismo -->
+        <h1>Electromagnetismo</h1>
+        <p>
+            El electromagnetismo es la rama de la física que estudia la interacción entre los campos eléctricos y magnéticos. Esta interacción es responsable de muchos fenómenos cotidianos, desde el funcionamiento de los motores eléctricos hasta la generación de energía. Un fenómeno clave del electrom

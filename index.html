@@ -1,0 +1,108 @@
+ <!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoPlace</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        /* Barra superior */
+        .barra-superior {
+            display: flex;
+            align-items: center;
+            background-color: #111; /* Negro marcado */
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .header-text {
+            font-size: 20px;
+            margin-right: 30px;
+            color:blue;
+        }
+
+        /* Botones en la barra */
+        .nav-link {
+            margin: 0 15px;
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline; /* Subraya el texto al pasar el mouse */
+        }
+
+        /* Ajuste del contenido principal */
+        .contenido {
+            margin-top: 60px; /* Deja espacio para la barra superior fija */
+            text-align: center;
+        }
+
+        .contenedor {
+            position: relative;
+            display: inline-block;
+            margin-top: 10px; /* Moví el contenido hacia arriba */
+        }
+
+        .contenedor img {
+            width: 600px;
+        }
+
+        .texto-centrado {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra superior con el logo, texto y enlaces -->
+    <div class="barra-superior">
+        <div class="logo"></div>
+        <div class="header-text">TecnoPlace</div>
+        <a href="pagina2.html" class="nav-link">Física</a>
+        <a href="particula.html" class="nav-link">Partículas</a>
+        <a href="elctricidad.html" class="nav-link">Electricidad i magnetismo</a>
+        <a href="cientificos.html" class="nav-link">Científicos y sus descubrimientos</a>
+        <a href="cohetes.html" class="nav-link">Cohetes</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="contenido">
+        <div class="contenedor">
+            <img src="https://i.pinimg.com/originals/f1/69/47/f16947ca6a616349ed63771804d16250.gif" 
+                 alt="Un GIF Tecnológico" />
+            <div class="texto-centrado">Bienvenido a TecnoPlace</div>
+        </div>
+    </div>
+</body>
+</html>

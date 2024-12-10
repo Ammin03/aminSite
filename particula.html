@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partículas - TecnoPlace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .barra-superior {
+            display: flex;
+            align-items: center;
+            background-color: #111;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .header-text {
+            font-size: 20px;
+            margin-right: 30px;
+            color:blue;
+        }
+        .nav-link {
+            margin: 0 15px;
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        .contenido {
+            margin-top: 60px;
+            padding: 20px;
+        }
+        h1 {
+            color: #fff;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 18px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .important-word {
+            color: #3498db;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra superior con el logo, texto y enlaces -->
+    <div class="barra-superior">
+        <div class="logo"></div>
+        <div class="header-text">TecnoPlace</div>
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="pagina2.html" class="nav-link">Física</a>
+        <a href="elctricidad.html" class="nav-link">Electricidad i magnetismo</a>
+        <a href="cientificos.html" class="nav-link">Científicos y sus descubrimientos</a>
+        <a href="cohetes.html" class="nav-link">Cohetes</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="contenido">
+        <h1>Partículas</h1>
+        <p>Las <span class="important-word" onclick="mostrarAlerta('partículas')">partículas</span> son los bloques fundamentales que componen toda la materia. Estas pequeñas unidades submicroscópicas incluyen átomos, moléculas y otras partículas subatómicas. Los <span class="important-word" onclick="mostrarAlerta('átomos')">átomos</span> son los componentes básicos de la materia, mientras que los <span class="important-word" onclick="mostrarAlerta('electrones')">electrones</span> son partículas con carga negativa que giran alrededor del núcleo atómico. Dentro del núcleo, encontramos <span class="important-word" onclick="mostrarAlerta('protones')">protones</span> y <span class="important-word" onclick="mostrarAlerta('neutrones')">neutrones</span>, que tienen masa pero no tienen carga. Estas partículas interactúan entre sí de diversas maneras, dando lugar a la formación de átomos, moléculas y, en última instancia, a toda la materia que nos rodea.</p>
+        
+        <p>Las interacciones entre las partículas son fundamentales en la física, como la interacción electromagnética entre electrones y protones. Estas interacciones son la base de fenómenos como la electricidad y el magnetismo, que son esenciales en la tecnología moderna. A través del estudio de estas interacciones, los científicos han podido descubrir muchas de las leyes fundamentales que rigen el universo, y continúan explorando cómo se forman las <span class="important-word" onclick="mostrarAlerta('galaxias')">galaxias</span> y el universo mismo.</p>
+    </div>
+
+    <script>
+        function mostrarAlerta(palabra) {
+            var explicaciones = {
+                'partículas': 'Las partículas son las unidades básicas de la materia y la energía. Incluyen átomos, electrones, protones y más.',
+                'átomos': 'Los átomos son las unidades fundamentales de la materia. Están formados por un núcleo (protones y neutrones) y electrones.',
+                'electrones': 'Los electrones son partículas subatómicas con carga negativa que giran alrededor del núcleo de un átomo.',
+                'protones': 'Los protones son partículas subatómicas con carga positiva que se encuentran en el núcleo de un átomo.',
+                'neutrones': 'Los neutrones son partículas subatómicas sin carga que se encuentran en el núcleo de un átomo.',
+                'galaxias': 'Las galaxias son enormes sistemas de estrellas, gas, polvo y materia oscura, que están ligados por la gravedad.'
+            };
+            
+            alert(explicaciones[palabra] || 'Explicación no disponible.');
+        }
+    </script>
+</body>
+</html>
