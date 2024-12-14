@@ -66,20 +66,20 @@
             margin-top: 10px; /* Moví el contenido hacia arriba */
         }
 
-        .contenedor .circulo {
-            width: 400px;
-            height: 400px;
-            background-color: blue;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
+        .contenedor img {
+            width: 600px;
         }
 
         .texto-centrado {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             font-size: 30px;
             color: white;
+            background: #040205;
+            padding: 10px 15px;
+            border-radius: 5px;
             text-align: center;
         }
     </style>
@@ -100,11 +100,10 @@
     <!-- Contenido principal -->
     <div class="contenido">
         <div class="contenedor">
-            <div class="circulo">
-                <div class="texto-centrado">Los 5 científicos<br>que cambiaron la historia</div>
-            </div>
+            <img src="https://i.pinimg.com/originals/f1/69/47/f16947ca6a616349ed63771804d16250.gif" 
+                 alt="Un GIF Tecnológico" />
+            <div class="texto-centrado">Los 5 científicos<br>que cambiaron la historia</div>
         </div>
     </div>
 </body>
 </html>
-
