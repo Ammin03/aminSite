@@ -78,6 +78,17 @@
             color: yellow;
             cursor: pointer;
         }
+
+        .imagen {
+            margin-top: 30px;
+        }
+
+        .imagen img {
+            max-width: 100%;
+            height: auto;
+            border: 3px solid white;
+            border-radius: 10px;
+        }
     </style>
     <script>
         function mostrarAlerta(contenido) {
@@ -90,7 +101,7 @@
     <div class="barra-superior">
         <div class="logo"></div>
         <div class="header-text">Científicos que cambiaron la historia</div>
-        <a href="cien.html" class="nav-link">Inicio</a>
+        <a href="TecnoPlace2.html" class="nav-link">Inicio</a>
         <a href="albert.html" class="nav-link">Albert Einstein</a>
         <a href="isaac.html" class="nav-link">Isaac Newton</a>
         <a href="marie.html" class="nav-link">Marie Curie</a>
@@ -104,7 +115,9 @@
         <div class="texto">
             Albert Einstein, nacido el <span class="highlight" onclick="mostrarAlerta('El 14 de marzo de 1879 es la fecha de nacimiento de Einstein, en la ciudad de Ulm, Alemania.')">14 de marzo de 1879</span> en <span class="highlight" onclick="mostrarAlerta('Ulm es una ciudad en Alemania donde nació Einstein.')">Ulm, Alemania</span>, es uno de los científicos más influyentes y reconocidos del siglo XX. Desde una edad temprana, Einstein mostró un gran interés por las <span class="highlight" onclick="mostrarAlerta('Einstein tenía una pasión por las matemáticas, una de las ciencias exactas que estudia números y patrones.')">matemáticas</span> y la <span class="highlight" onclick="mostrarAlerta('La física es la ciencia que estudia las propiedades del espacio, el tiempo y la materia.')">física</span>, lo que lo llevó a desarrollar teorías que revolverían nuestra comprensión del universo. Descubrió la <span class="highlight" onclick="mostrarAlerta('La teoría de la relatividad es una de las contribuciones más importantes de Einstein a la ciencia.')">teoría de la relatividad</span> y su ecuación más famosa es <span class="highlight" onclick="mostrarAlerta('E=mc² significa que la energía (E) es igual a la masa (m) multiplicada por la velocidad de la luz (c) al cuadrado.')">E=mc²</span>.
         </div>
+        <div class="imagen">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg" alt="Albert Einstein">
+        </div>
     </div>
 </body>
 </html>
-
