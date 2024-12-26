@@ -1,1 +1,109 @@
+<!DOCTYPE html>  
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marie Curie</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Fondo negro */
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
 
+        /* Barra superior */
+        .barra-superior {
+            display: flex;
+            align-items: center;
+            background-color: #111; /* Negro marcado */
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .header-text {
+            font-size: 20px;
+            margin-right: 30px;
+            color: blue;
+        }
+
+        /* Botones en la barra */
+        .nav-link {
+            margin: 0 15px;
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline; /* Subraya el texto al pasar el mouse */
+        }
+
+        /* Estilo del contenido */
+        .contenido {
+            margin-top: 70px; /* Deja espacio para la barra superior fija */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .titulo {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .texto {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .highlight {
+            text-decoration: underline;
+            color: yellow;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function mostrarAlerta(contenido) {
+            alert(contenido);
+        }
+    </script>
+</head>
+<body>
+    <!-- Barra superior con el logo, texto y enlaces -->
+    <div class="barra-superior">
+        <div class="logo"></div>
+        <div class="header-text">Científicos que cambiaron la historia</div>
+        <a href="TecnoPlace2.html" class="nav-link">Inicio</a>
+        <a href="albert.html" class="nav-link">Albert Einstein</a>
+        <a href="isaac.html" class="nav-link">Isaac Newton</a>
+        <a href="marie.html" class="nav-link">Marie Curie</a>
+        <a href="charles.html" class="nav-link">Charles Darwin</a>
+        <a href="gali.html" class="nav-link">Galileo Galilei</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="contenido">
+        <div class="titulo">Marie Curie</div>
+        <div class="texto">
+            Marie Curie, nacida el <span class="highlight" onclick="mostrarAlerta('El 7 de noviembre de 1867 es la fecha de nacimiento de Marie Curie, en Varsovia, Polonia.')">7 de noviembre de 1867</span> en <span class="highlight" onclick="mostrarAlerta('Varsovia es la capital de Polonia, donde nació Marie Curie.')">Varsovia, Polonia</span>, fue una pionera en el campo de la <span class="highlight" onclick="mostrarAlerta('La radiactividad es el fenómeno físico mediante el cual algunos materiales emiten radiación espontáneamente.')">radiactividad</span>. Fue la primera persona en recibir dos premios <span class="highlight" onclick="mostrarAlerta('El Premio Nobel es uno de los galardones más prestigiosos del mundo, otorgado por logros en diferentes campos, incluyendo la física y la química.')">Nobel</span> en diferentes disciplinas científicas: <span class="highlight" onclick="mostrarAlerta('Marie Curie ganó el Premio Nobel de Física en 1903 junto con su esposo Pierre Curie y Henri Becquerel.')">Física</span> y <span class="highlight" onclick="mostrarAlerta('Marie Curie ganó el Premio Nobel de Química en 1911 por sus descubrimientos relacionados con los elementos radio y polonio.')">Química</span>. Su trabajo sentó las bases para el desarrollo de la medicina nuclear y la investigación moderna.
+        </div>
+    </div>
+</body>
+</html>
