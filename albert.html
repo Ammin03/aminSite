@@ -87,9 +87,98 @@
     </script>
 </head>
 <body>
+        /* Menú desplegable */
+        .menu-cientificos {
+            position: relative;
+            display: inline-block;
+        }
+
+        .menu-cientificos .submenu {
+            display: none;
+            position: absolute;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-cientificos:hover .submenu {
+            display: block;
+        }
+
+        .submenu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .submenu a:hover {
+            text-decoration: underline;
+        }
+
+        /* Menú hamburguesa */
+        .hamburguesa {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburguesa div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        .menu-hamburguesa {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-hamburguesa a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .menu-hamburguesa a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-link {
+                display: none;
+            }
+
+            .hamburguesa {
+                display: flex;
+            }
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-hamburguesa');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
     <!-- Barra superior con el logo, texto y enlaces -->
-            <a href="index.html" class="nav-link">Inicio</a>
-        <a href="pagina2.html" class="nav-link">Física</a>
+    <div class="barra-superior">
+        <div style="display: flex; align-items: center;">
+            <div class="logo"></div>
+            <div class="header-text">TecnoPlace</div>
+        </div>
+        <div>
+            <a href="pagina2.html" class="nav-link">Física</a>
             <a href="particula.html" class="nav-link">Partículas</a>
             <a href="elctricidad.html" class="nav-link">Electricidad i magnetismo</a>
             <div class="menu-cientificos">
