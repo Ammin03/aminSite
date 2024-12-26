@@ -14,6 +14,22 @@
             color: white;
         }
 
+<!DOCTYPE html>  
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoPlace 2</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #040205;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
         /* Barra superior */
         .barra-superior {
             display: flex;
@@ -54,39 +70,35 @@
             text-decoration: underline; /* Subraya el texto al pasar el mouse */
         }
 
-        /* Estilo del contenido */
+        /* Ajuste del contenido principal */
         .contenido {
-            margin-top: 70px; /* Deja espacio para la barra superior fija */
-            padding: 20px;
+            margin-top: 60px; /* Deja espacio para la barra superior fija */
             text-align: center;
         }
 
-        .titulo {
-            font-size: 36px;
-            margin-bottom: 20px;
+        .contenedor {
+            position: relative;
+            display: inline-block;
+            margin-top: 10px; /* Moví el contenido hacia arriba */
         }
 
-        .texto {
-            font-size: 18px;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
+        .contenedor img {
+            width: 600px;
         }
 
-        .highlight {
-            text-decoration: underline;
-            color: yellow;
-            cursor: pointer;
+        .texto-centrado {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            color: white;
+            background: #040205;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
         }
-        
-    </style>
-    <script>
-        function mostrarAlerta(contenido) {
-            alert(contenido);
-        }
-    </script>
-</head>
-<body>
+
         /* Menú desplegable */
         .menu-cientificos {
             position: relative;
@@ -189,6 +201,22 @@
                     <a href="marie.html">Marie Curie</a>
                     <a href="charles.html">Charles Darwin</a>
                     <a href="gali.html">Galileo Galilei</a>
+                </div>
+            </div>
+            <a href="cohetes.html" class="nav-link">Cohetes</a>
+        </div>
+        <div class="hamburguesa" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu-hamburguesa">
+            <a href="albert.html">Albert Einstein</a>
+            <a href="isaac.html">Isaac Newton</a>
+            <a href="marie.html">Marie Curie</a>
+            <a href="charles.html">Charles Darwin</a>
+            <a href="gali.html">Galileo Galilei</a>
+        </div>
     </div>
 
     <!-- Contenido principal -->
