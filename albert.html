@@ -54,55 +54,131 @@
             text-decoration: underline; /* Subraya el texto al pasar el mouse */
         }
 
-        /* Estilo del contenido */
-        .contenido {
-            margin-top: 70px; /* Deja espacio para la barra superior fija */
-            padding: 20px;
-            text-align: center;
+        /* Menú desplegable */
+        .menu-cientificos {
+            position: relative;
+            display: inline-block;
         }
 
-        .titulo {
-            font-size: 36px;
-            margin-bottom: 20px;
+        .menu-cientificos .submenu {
+            display: none;
+            position: absolute;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
-        .texto {
-            font-size: 18px;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
+        .menu-cientificos:hover .submenu {
+            display: block;
         }
 
-        .highlight {
+        .submenu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .submenu a:hover {
             text-decoration: underline;
-            color: yellow;
+        }
+
+        /* Menú hamburguesa */
+        .hamburguesa {
+            display: none;
+            flex-direction: column;
             cursor: pointer;
+        }
+
+        .hamburguesa div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        .menu-hamburguesa {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-hamburguesa a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .menu-hamburguesa a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-link {
+                display: none;
+            }
+
+            .hamburguesa {
+                display: flex;
+            }
         }
     </style>
     <script>
-        function mostrarAlerta(contenido) {
-            alert(contenido);
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-hamburguesa');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
     </script>
 </head>
 <body>
     <!-- Barra superior con el logo, texto y enlaces -->
     <div class="barra-superior">
-        <div class="logo"></div>
-        <div class="header-text">Científicos que cambiaron la historia</div>
-        <a href="TecnoPlace2.html" class="nav-link">Inicio</a>
-        <a href="albert.html" class="nav-link">Albert Einstein</a>
-        <a href="isaac.html" class="nav-link">Isaac Newton</a>
-        <a href="marie.html" class="nav-link">Marie Curie</a>
-        <a href="charles.html" class="nav-link">Charles Darwin</a>
-        <a href="gali.html" class="nav-link">Galileo Galilei</a>
+        <div style="display: flex; align-items: center;">
+            <div class="logo"></div>
+            <div class="header-text">TecnoPlace</div>
+        </div>
+        <div>
+            <a href="pagina2.html" class="nav-link">Física</a>
+            <a href="particula.html" class="nav-link">Partículas</a>
+            <a href="elctricidad.html" class="nav-link">Electricidad i magnetismo</a>
+            <div class="menu-cientificos">
+                <a href="#" class="nav-link">Científicos &#9662;</a>
+                <div class="submenu">
+                    <a href="albert.html">Albert Einstein</a>
+                    <a href="isaac.html">Isaac Newton</a>
+                    <a href="marie.html">Marie Curie</a>
+                    <a href="charles.html">Charles Darwin</a>
+                    <a href="gali.html">Galileo Galilei</a>
+                </div>
+            </div>
+            <a href="cohetes.html" class="nav-link">Cohetes</a>
+        </div>
+        <div class="hamburguesa" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu-hamburguesa">
+            <a href="albert.html">Albert Einstein</a>
+            <a href="isaac.html">Isaac Newton</a>
+            <a href="marie.html">Marie Curie</a>
+            <a href="charles.html">Charles Darwin</a>
+            <a href="gali.html">Galileo Galilei</a>
+        </div>
     </div>
 
     <!-- Contenido principal -->
     <div class="contenido">
         <div class="titulo">Albert Einstein</div>
         <div class="texto">
-            Albert Einstein, nacido el <span class="highlight" onclick="mostrarAlerta('El 14 de marzo de 1879 es la fecha de nacimiento de Einstein, en la ciudad de Ulm, Alemania.')">14 de marzo de 1879</span> en <span class="highlight" onclick="mostrarAlerta('Ulm es una ciudad en Alemania donde nació Einstein.')">Ulm, Alemania</span>, es uno de los científicos más influyentes y reconocidos del siglo XX. Desde una edad temprana, Einstein mostró un gran interés por las <span class="highlight" onclick="mostrarAlerta('Einstein tenía una pasión por las matemáticas, una de las ciencias exactas que estudia números y patrones.')">matemáticas</span> y la <span class="highlight" onclick="mostrarAlerta('La física es la ciencia que estudia las propiedades del espacio, el tiempo y la materia.')">física</span>, lo que lo llevó a desarrollar teorías que revolucionaron nuestra comprensión del universo. Descubrió la <span class="highlight" onclick="mostrarAlerta('La teoría de la relatividad es una de las contribuciones más importantes de Einstein a la ciencia.')">teoría de la relatividad</span> y su ecuación más famosa es <span class="highlight" onclick="mostrarAlerta('E=mc² significa que la energía (E) es igual a la masa (m) multiplicada por la velocidad de la luz (c) al cuadrado.')">E=mc²</span>.
+            Albert Einstein, nacido el <span class="highlight" onclick="mostrarAlerta('El 14 de marzo de 1879 es la fecha de nacimiento de Einstein, en la ciudad de Ulm, Alemania.')">14 de marzo de 1879</span> en <span class="highlight" onclick="mostrarAlerta('Ulm es una ciudad en Alemania donde nació Einstein.')">Ulm, Alemania</span>, es uno de los científicos más influyentes y reconocidos del siglo XX. Desde una edad temprana, Einstein mostró un gran interés por las <span class="highlight" onclick="mostrarAlerta('Einstein tenía una pasión por las matemáticas, una de las ciencias exactas que estudia números y patrones.')">matemáticas</span> y la <span class="highlight" onclick="mostrarAlerta('La física es la ciencia que estudia las propiedades del espacio, el tiempo y la materia.')">física</span>, lo que lo llevó a desarrollar teorías que revolverían nuestra comprensión del universo. Descubrió la <span class="highlight" onclick="mostrarAlerta('La teoría de la relatividad es una de las contribuciones más importantes de Einstein a la ciencia.')">teoría de la relatividad</span> y su ecuación más famosa es <span class="highlight" onclick="mostrarAlerta('E=mc² significa que la energía (E) es igual a la masa (m) multiplicada por la velocidad de la luz (c) al cuadrado.')">E=mc²</span>.
         </div>
     </div>
 </body>
