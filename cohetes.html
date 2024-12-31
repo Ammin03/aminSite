@@ -3,28 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cohetes - TecnoPlace</title>
+    <title>Cohetes</title>
     <style>
         /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
             background-color: #000; /* Fondo negro */
-            color: white; /* Color de texto blanco */
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start; /* Asegura que empiece desde arriba */
-            text-align: center;
-            height: 100%; /* No ocupa toda la altura de la ventana, solo lo necesario */
+            color: white;
         }
 
         /* Barra superior */
         .barra-superior {
             display: flex;
             align-items: center;
-            background-color: #111; /* Fondo negro */
+            background-color: #111; /* Negro marcado */
             padding: 10px 20px;
             position: fixed;
             top: 0;
@@ -34,8 +28,8 @@
         }
 
         .logo {
-            width: 40px; /* Tamaño del logo ajustado */
-            height: 40px;
+            width: 20px;
+            height: 20px;
             background-color: blue;
             border-radius: 50%;
             margin-right: 10px;
@@ -47,7 +41,7 @@
             color: blue;
         }
 
-        /* Estilos de los enlaces de navegación */
+        /* Botones en la barra */
         .nav-link {
             margin: 0 15px;
             font-size: 16px;
@@ -57,22 +51,22 @@
         }
 
         .nav-link:hover {
-            text-decoration: underline;
+            text-decoration: underline; /* Subraya el texto al pasar el mouse */
         }
 
         /* Menú desplegable */
         .menu-cientificos {
             position: relative;
+            display: inline-block;
         }
 
-        .submenu {
+        .menu-cientificos .submenu {
             display: none;
             position: absolute;
-            top: 30px;
-            background-color: #111;
+            background-color: #222;
             padding: 10px;
             border-radius: 5px;
-            min-width: 150px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
         .menu-cientificos:hover .submenu {
@@ -82,15 +76,61 @@
         .submenu a {
             color: white;
             text-decoration: none;
-            padding: 5px 10px;
             display: block;
+            margin: 5px 0;
         }
 
         .submenu a:hover {
-            background-color: #333;
+            text-decoration: underline;
         }
 
-        /* Contenido principal */
+        /* Menú hamburguesa */
+        .hamburguesa {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburguesa div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        .menu-hamburguesa {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-hamburguesa a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .menu-hamburguesa a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-link {
+                display: none;
+            }
+
+            .hamburguesa {
+                display: flex;
+            }
+        }
+
+        /* Estilo del contenido */
         .contenido {
             margin-top: 70px; /* Deja espacio para la barra superior fija */
             padding: 20px;
@@ -109,108 +149,119 @@
             margin: 0 auto;
         }
 
-        .subrayado {
+        .highlight {
             text-decoration: underline;
+            color: yellow;
             cursor: pointer;
-            color: #5dade2; /* Azul para las palabras subrayadas */
-        }
-        .subrayado:hover {
-            color: #3498db; /* Azul más oscuro al pasar el ratón */
         }
 
-        .cohetes-lista {
-            margin-top: 40px;
-            font-size: 18px;
-            text-align: center;
-            width: 80%;
-        }
-
-        .cohetes-lista h2 {
-            font-size: 30px;
-            margin-bottom: 40px;
+        /* Lista de Cohetes */
+        .lista-cohetes {
+            list-style-type: none;
+            padding: 0;
         }
 
         .cohete {
-            margin-bottom: 20px;
-            padding-left: 10px;
-            padding-right: 10px;
+            background-color: #222;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
         }
+
+        .cohete h3 {
+            margin: 0;
+            color: #f1c40f;
+        }
+
+        .cohete p {
+            margin: 5px 0;
+        }
+
     </style>
     <script>
-        function mostrarInfo(term) {
-            let info = '';
-            if (term === 'propulsion') {
-                info = 'La propulsión de un cohete se logra mediante el uso de motores a chorro que expulsan gases a alta velocidad, lo que genera un empuje que hace que el cohete se desplace hacia adelante.';
-            }
-            if (term === 'combustible') {
-                info = 'Los cohetes suelen utilizar combustibles líquidos o sólidos que se queman para producir la energía necesaria para el despegue y la aceleración.';
-            }
-            alert(info); // Muestra la explicación en una alerta
+        function mostrarAlerta(contenido) {
+            alert(contenido);
+        }
+
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-hamburguesa');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
     </script>
 </head>
 <body>
-
     <!-- Barra superior con el logo, texto y enlaces -->
     <div class="barra-superior">
-        <div class="logo"></div> <!-- Logo -->
-        <div class="header-text">TecnoPlace</div> <!-- Nombre de la página -->
-        <a href="index.html" class="nav-link">Inicio</a>
-        <a href="pagina2.html" class="nav-link">Física</a>
-        <a href="particula.html" class="nav-link">Partículas</a>
-        <a href="elctricidad.html" class="nav-link">Electricidad y Magnetismo</a>
-        <div class="menu-cientificos">
-            <a href="#" class="nav-link">Científicos &#9662;</a>
-            <div class="submenu">
-                <a href="albert.html">Albert Einstein</a>
-                <a href="isaac.html">Isaac Newton</a>
-                <a href="marie.html">Marie Curie</a>
-                <a href="charles.html">Charles Darwin</a>
-                <a href="gali.html">Galileo Galilei</a>
+        <div style="display: flex; align-items: center;">
+            <div class="logo"></div>
+            <div class="header-text">TecnoPlace</div>
+        </div>
+        <div>
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="pagina2.html" class="nav-link">Física</a>
+            <a href="particula.html" class="nav-link">Partículas</a>
+            <a href="elctricidad.html" class="nav-link">Electricidad y Magnetismo</a>
+            <div class="menu-cientificos">
+                <a href="#" class="nav-link">Científicos &#9662;</a>
+                <div class="submenu">
+                    <a href="albert.html">Albert Einstein</a>
+                    <a href="isaac.html">Isaac Newton</a>
+                    <a href="marie.html">Marie Curie</a>
+                    <a href="charles.html">Charles Darwin</a>
+                    <a href="gali.html">Galileo Galilei</a>
+                </div>
             </div>
+            <a href="cohetes.html" class="nav-link">Cohetes</a>
+        </div>
+        <div class="hamburguesa" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu-hamburguesa">
+            <a href="albert.html">Albert Einstein</a>
+            <a href="isaac.html">Isaac Newton</a>
+            <a href="marie.html">Marie Curie</a>
+            <a href="charles.html">Charles Darwin</a>
+            <a href="gali.html">Galileo Galilei</a>
         </div>
     </div>
 
-    <!-- Título y contenido de Cohetes -->
+    <!-- Contenido principal -->
     <div class="contenido">
-        <h1>Cohetes</h1>
+        <div class="titulo">Cohetes</div>
         <div class="texto">
-            <p>
-                Los cohetes son vehículos diseñados para viajar a través del espacio. Funcionan bajo el principio de la acción y reacción, según la tercera ley de Newton, y utilizan motores de propulsión que expelen gases a alta velocidad para generar empuje. Los cohetes son fundamentales en la exploración espacial, ya que permiten lanzar satélites, naves espaciales y misiones a otros planetas.
-                En la ingeniería de cohetes, se consideran aspectos cruciales como la <span class="subrayado" onclick="mostrarInfo('propulsion')">propulsión</span>, la <span class="subrayado" onclick="mostrarInfo('combustible')">composición del combustible</span> y las etapas del lanzamiento, entre otros factores.
-            </p>
+            Los cohetes son vehículos impulsados por la expulsión de gases a alta velocidad, lo que les permite generar un empuje hacia adelante según la tercera ley de Newton. Estos vehículos son fundamentales para la exploración espacial, ya que permiten el envío de satélites y naves hacia el espacio exterior. Los cohetes se dividen en dos tipos principales: los de combustible líquido y los de combustible sólido.
+
+            Los cohetes de combustible líquido utilizan una mezcla de líquidos combustibles y oxidantes que reaccionan para producir gas y energía. Los cohetes de combustible sólido, por otro lado, contienen combustible y oxidante en una sola mezcla sólida que se enciende cuando se activa.
+
+            Los avances tecnológicos han permitido que los cohetes sean cada vez más potentes y eficientes, lo que facilita las misiones espaciales más complejas. La NASA, SpaceX y otras agencias espaciales siguen investigando nuevas tecnologías para mejorar la capacidad de los cohetes y hacer que los viajes espaciales sean más accesibles.
         </div>
+
+        <!-- Lista de Cohetes -->
+        <div class="titulo">Cinco cohetes más importantes de la NASA</div>
+        <ul class="lista-cohetes">
+            <li class="cohete">
+                <h3>Saturno V</h3>
+                <p>El cohete Saturno V fue el lanzador más grande y potente utilizado por la NASA. Fue crucial para el programa Apolo y llevó a los astronautas a la Luna.</p>
+            </li>
+            <li class="cohete">
+                <h3>Falcon 9</h3>
+                <p>Desarrollado por SpaceX, el Falcon 9 es conocido por su capacidad de reutilización, ya que su primera etapa puede aterrizar y ser reutilizada en misiones posteriores.</p>
+            </li>
+            <li class="cohete">
+                <h3>Atlas V</h3>
+                <p>El Atlas V es uno de los cohetes más fiables utilizados para lanzar satélites y misiones espaciales de la NASA, el Ejército de los EE.UU. y otras agencias internacionales.</p>
+            </li>
+            <li class="cohete">
+                <h3>Delta IV</h3>
+                <p>El Delta IV es un cohete de lanzamiento pesado utilizado para poner en órbita satélites, naves espaciales y misiones de exploración.</p>
+            </li>
+            <li class="cohete">
+                <h3>Space Shuttle</h3>
+                <p>El Space Shuttle de la NASA fue una nave reutilizable que operó desde 1981 hasta 2011, llevando astronautas y cargas a la órbita terrestre baja.</p>
+            </li>
+        </ul>
     </div>
-
-    <!-- Título centrado de los cohetes hechos por la NASA -->
-    <div class="cohetes-lista">
-        <h2>Algunos cohetes hechos por la NASA</h2>
-
-        <div class="cohete">
-            <h3>Saturn V</h3>
-            <p>El Saturn V es probablemente el cohete más famoso de la NASA, utilizado para las misiones Apollo, incluidas las misiones que llevaron a los astronautas a la Luna. Con una altura de 110 metros, fue el cohete más grande y potente jamás construido y utilizado hasta la fecha.</p>
-        </div>
-
-        <div class="cohete">
-            <h3>Atlas V</h3>
-            <p>El Atlas V es un cohete lanzador de uso múltiple, utilizado para lanzar satélites y sondas espaciales. Ha sido un pilar en la exploración espacial moderna de la NASA, lanzando misiones como la sonda Mars Science Laboratory (Curiosity) hacia Marte.</p>
-        </div>
-
-        <div class="cohete">
-            <h3>Delta IV</h3>
-            <p>El Delta IV es un sistema de lanzamiento de cohetes utilizado por la NASA para una variedad de misiones, incluyendo el lanzamiento de satélites y sondas espaciales. Es conocido por su fiabilidad y flexibilidad para realizar lanzamientos de diferentes tipos de carga útil.</p>
-        </div>
-
-        <div class="cohete">
-            <h3>Space Shuttle</h3>
-            <p>El Space Shuttle, o transbordador espacial, fue un vehículo reutilizable que permitió a la NASA realizar vuelos espaciales regulares entre 1981 y 2011. Su principal función era transportar astronautas y material al espacio y regresar a la Tierra.</p>
-        </div>
-
-        <div class="cohete">
-            <h3>Falcon Heavy</h3>
-            <p>Aunque no es un cohete de la NASA directamente, el Falcon Heavy de SpaceX es crucial para la NASA en términos de colaboración privada. Se utiliza para misiones que requieren lanzar grandes cargas al espacio, como la misión Artemis de regreso a la Luna.</p>
-        </div>
-    </div>
-
 </body>
 </html>
