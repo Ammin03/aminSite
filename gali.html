@@ -1,4 +1,4 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -78,8 +78,60 @@
             color: yellow;
             cursor: pointer;
         }
+
+        /* Estilos para el menú hamburguesa */
+        .hamburguesa {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburguesa div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        .menu-hamburguesa {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-hamburguesa a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .menu-hamburguesa a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-link {
+                display: none;
+            }
+
+            .hamburguesa {
+                display: flex;
+            }
+        }
+
     </style>
     <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-hamburguesa');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
         function mostrarAlerta(contenido) {
             alert(contenido);
         }
@@ -96,6 +148,22 @@
         <a href="marie.html" class="nav-link">Marie Curie</a>
         <a href="charles.html" class="nav-link">Charles Darwin</a>
         <a href="gali.html" class="nav-link">Galileo Galilei</a>
+
+        <!-- Menú hamburguesa -->
+        <div class="hamburguesa" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="menu-hamburguesa">
+            <a href="TecnoPlace2.html">Inicio</a>
+            <a href="albert.html">Albert Einstein</a>
+            <a href="isaac.html">Isaac Newton</a>
+            <a href="marie.html">Marie Curie</a>
+            <a href="charles.html">Charles Darwin</a>
+            <a href="gali.html">Galileo Galilei</a>
+        </div>
     </div>
 
     <!-- Contenido principal -->
