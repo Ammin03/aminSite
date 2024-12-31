@@ -15,30 +15,35 @@
             text-align: center;
         }
 
-        /* Barra superior */
+        /* Barra superior con estilo similar a Albert Einstein */
         .barra-superior {
             display: flex;
             align-items: center;
-            background-color: #111;
+            background-color: #333;
             padding: 10px 20px;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
+
         .logo {
-            width: 20px;
-            height: 20px;
-            background-color: blue;
+            width: 25px;
+            height: 25px;
+            background-color: #4CAF50;
             border-radius: 50%;
             margin-right: 10px;
         }
+
         .header-text {
             font-size: 20px;
+            font-weight: bold;
             margin-right: 30px;
-            color: blue;
+            color: white;
         }
+
         .nav-link {
             margin: 0 15px;
             font-size: 16px;
@@ -46,68 +51,9 @@
             text-decoration: none;
             cursor: pointer;
         }
+
         .nav-link:hover {
             text-decoration: underline;
-        }
-
-        /* Menú desplegable */
-        .menu-cientificos {
-            position: relative;
-            display: inline-block;
-        }
-        .menu-cientificos .submenu {
-            display: none;
-            position: absolute;
-            background-color: #222;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-        .menu-cientificos:hover .submenu {
-            display: block;
-        }
-
-        /* Menú hamburguesa */
-        .hamburguesa {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        .hamburguesa div {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 4px 0;
-        }
-        .menu-hamburguesa {
-            display: none;
-            position: absolute;
-            top: 50px;
-            right: 20px;
-            background-color: #222;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-        .menu-hamburguesa a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            margin: 5px 0;
-        }
-        .menu-hamburguesa a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            .nav-link {
-                display: none;
-            }
-            .hamburguesa {
-                display: flex;
-            }
-            .menu-hamburguesa {
-                display: block;
-            }
         }
 
         .contenido {
@@ -153,50 +99,19 @@
             
             alert(explicaciones[palabra] || 'Explicación no disponible.');
         }
-        
-        function toggleMenu() {
-            const menu = document.querySelector('.menu-hamburguesa');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        }
     </script>
 </head>
 <body>
 
     <!-- Barra superior con el logo, texto y enlaces -->
     <div class="barra-superior">
-        <div style="display: flex; align-items: center;">
-            <div class="logo"></div>
-            <div class="header-text">TecnoPlace</div>
-        </div>
-        <div>
-            <a href="index.html" class="nav-link">Inicio</a>
-            <a href="pagina2.html" class="nav-link">Física</a>
-            <a href="particula.html" class="nav-link">Partículas</a>
-            <a href="cientificos.html" class="nav-link">Científicos y sus descubrimientos</a>
-            <a href="cohetes.html" class="nav-link">Cohetes</a>
-            <div class="menu-cientificos">
-                <a href="#" class="nav-link">Científicos &#9662;</a>
-                <div class="submenu">
-                    <a href="albert.html">Albert Einstein</a>
-                    <a href="isaac.html">Isaac Newton</a>
-                    <a href="marie.html">Marie Curie</a>
-                    <a href="charles.html">Charles Darwin</a>
-                    <a href="gali.html">Galileo Galilei</a>
-                </div>
-            </div>
-        </div>
-        <div class="hamburguesa" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="menu-hamburguesa">
-            <a href="albert.html">Albert Einstein</a>
-            <a href="isaac.html">Isaac Newton</a>
-            <a href="marie.html">Marie Curie</a>
-            <a href="charles.html">Charles Darwin</a>
-            <a href="gali.html">Galileo Galilei</a>
-        </div>
+        <div class="logo"></div>
+        <div class="header-text">TecnoPlace</div>
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="pagina2.html" class="nav-link">Física</a>
+        <a href="particula.html" class="nav-link">Partículas</a>
+        <a href="cientificos.html" class="nav-link">Científicos y sus descubrimientos</a>
+        <a href="cohetes.html" class="nav-link">Cohetes</a>
     </div>
 
     <!-- Contenido principal -->
@@ -234,8 +149,9 @@
         <!-- Título y texto de Electromagnetismo -->
         <h1>Electromagnetismo</h1>
         <p>
-            El electromagnetismo es la rama de la física que estudia la interacción entre los campos eléctricos y magnéticos. Esta interacción es responsable de muchos fenómenos cotidianos, desde el funcionamiento de los motores eléctricos hasta la generación de energía. Un fenómeno clave del electrom
+            El electromagnetismo es la rama de la física que estudia la interacción entre los campos eléctricos y magnéticos. Esta interacción es responsable de muchos fenómenos cotidianos, desde el funcionamiento de los motores eléctricos hasta la generación de energía.
         </p>
     </div>
+
 </body>
 </html>
