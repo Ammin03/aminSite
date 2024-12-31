@@ -24,7 +24,7 @@
         .barra-superior {
             display: flex;
             align-items: center;
-            background-color: #111; /* Negro marcado */
+            background-color: #111; /* Fondo negro */
             padding: 10px 20px;
             position: fixed;
             top: 0;
@@ -34,8 +34,8 @@
         }
 
         .logo {
-            width: 30px; /* Tamaño del logo */
-            height: 30px;
+            width: 40px; /* Tamaño del logo ajustado */
+            height: 40px;
             background-color: blue;
             border-radius: 50%;
             margin-right: 10px;
@@ -57,7 +57,37 @@
         }
 
         .nav-link:hover {
-            text-decoration: underline; /* Subraya el texto al pasar el mouse */
+            text-decoration: underline;
+        }
+
+        /* Menú desplegable */
+        .menu-cientificos {
+            position: relative;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 30px;
+            background-color: #111;
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 150px;
+        }
+
+        .menu-cientificos:hover .submenu {
+            display: block;
+        }
+
+        .submenu a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            display: block;
+        }
+
+        .submenu a:hover {
+            background-color: #333;
         }
 
         /* Contenido principal */
@@ -104,35 +134,6 @@
             margin-bottom: 20px;
             padding-left: 10px;
             padding-right: 10px;
-        }
-
-        /* Estilo para la barra de científicos */
-        .menu-cientificos {
-            position: relative;
-        }
-
-        .submenu {
-            display: none;
-            position: absolute;
-            top: 30px;
-            background-color: #111;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        .menu-cientificos:hover .submenu {
-            display: block;
-        }
-
-        .submenu a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 10px;
-            display: block;
-        }
-
-        .submenu a:hover {
-            background-color: #333;
         }
     </style>
     <script>
