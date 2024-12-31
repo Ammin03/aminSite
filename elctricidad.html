@@ -49,6 +49,67 @@
         .nav-link:hover {
             text-decoration: underline;
         }
+
+        /* Menú desplegable */
+        .menu-cientificos {
+            position: relative;
+            display: inline-block;
+        }
+        .menu-cientificos .submenu {
+            display: none;
+            position: absolute;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .menu-cientificos:hover .submenu {
+            display: block;
+        }
+
+        /* Menú hamburguesa */
+        .hamburguesa {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburguesa div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+        .menu-hamburguesa {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .menu-hamburguesa a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+        .menu-hamburguesa a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .nav-link {
+                display: none;
+            }
+            .hamburguesa {
+                display: flex;
+            }
+            .menu-hamburguesa {
+                display: block;
+            }
+        }
+
         .contenido {
             margin-top: 80px;
             padding: 20px;
@@ -56,16 +117,19 @@
             margin-left: auto;
             margin-right: auto;
         }
+
         h1 {
             font-size: 36px;
             margin-bottom: 20px;
         }
+
         p {
             line-height: 1.6;
             font-size: 18px;
             max-width: 900px;
             margin: 0 auto;
         }
+
         .important-word {
             color: #3498db;
             cursor: pointer;
@@ -89,19 +153,50 @@
             
             alert(explicaciones[palabra] || 'Explicación no disponible.');
         }
+        
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-hamburguesa');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
     </script>
 </head>
 <body>
 
     <!-- Barra superior con el logo, texto y enlaces -->
     <div class="barra-superior">
-        <div class="logo"></div>
-        <div class="header-text">TecnoPlace</div>
-        <a href="index.html" class="nav-link">Inicio</a>
-        <a href="pagina2.html" class="nav-link">Física</a>
-        <a href="particula.html" class="nav-link">Partículas</a>
-        <a href="cientificos.html" class="nav-link">Científicos y sus descubrimientos</a>
-        <a href="cohetes.html" class="nav-link">Cohetes</a>
+        <div style="display: flex; align-items: center;">
+            <div class="logo"></div>
+            <div class="header-text">TecnoPlace</div>
+        </div>
+        <div>
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="pagina2.html" class="nav-link">Física</a>
+            <a href="particula.html" class="nav-link">Partículas</a>
+            <a href="cientificos.html" class="nav-link">Científicos y sus descubrimientos</a>
+            <a href="cohetes.html" class="nav-link">Cohetes</a>
+            <div class="menu-cientificos">
+                <a href="#" class="nav-link">Científicos &#9662;</a>
+                <div class="submenu">
+                    <a href="albert.html">Albert Einstein</a>
+                    <a href="isaac.html">Isaac Newton</a>
+                    <a href="marie.html">Marie Curie</a>
+                    <a href="charles.html">Charles Darwin</a>
+                    <a href="gali.html">Galileo Galilei</a>
+                </div>
+            </div>
+        </div>
+        <div class="hamburguesa" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu-hamburguesa">
+            <a href="albert.html">Albert Einstein</a>
+            <a href="isaac.html">Isaac Newton</a>
+            <a href="marie.html">Marie Curie</a>
+            <a href="charles.html">Charles Darwin</a>
+            <a href="gali.html">Galileo Galilei</a>
+        </div>
     </div>
 
     <!-- Contenido principal -->
@@ -140,3 +235,7 @@
         <h1>Electromagnetismo</h1>
         <p>
             El electromagnetismo es la rama de la física que estudia la interacción entre los campos eléctricos y magnéticos. Esta interacción es responsable de muchos fenómenos cotidianos, desde el funcionamiento de los motores eléctricos hasta la generación de energía. Un fenómeno clave del electrom
+        </p>
+    </div>
+</body>
+</html>
