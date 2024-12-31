@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galileo Galilei</title>
+    <title>Galileo Galilei - TecnoPlace</title>
     <style>
         /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
-            background-color: #000; /* Fondo negro */
+            background-color: #000;
             margin: 0;
             padding: 0;
             color: white;
@@ -51,35 +51,40 @@
         }
 
         .nav-link:hover {
-            text-decoration: underline; /* Subraya el texto al pasar el mouse */
-        }
-
-        /* Estilo del contenido */
-        .contenido {
-            margin-top: 70px; /* Deja espacio para la barra superior fija */
-            padding: 20px;
-            text-align: center;
-        }
-
-        .titulo {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .texto {
-            font-size: 18px;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .highlight {
             text-decoration: underline;
-            color: yellow;
-            cursor: pointer;
         }
 
-        /* Estilos para el menú hamburguesa */
+        /* Menú desplegable */
+        .menu-cientificos {
+            position: relative;
+            display: inline-block;
+        }
+
+        .menu-cientificos .submenu {
+            display: none;
+            position: absolute;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-cientificos:hover .submenu {
+            display: block;
+        }
+
+        .submenu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .submenu a:hover {
+            text-decoration: underline;
+        }
+
+        /* Menú hamburguesa */
         .hamburguesa {
             display: none;
             flex-direction: column;
@@ -125,39 +130,73 @@
             }
         }
 
+        /* Estilo del contenido */
+        .contenido {
+            margin-top: 70px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .titulo {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .texto {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .highlight {
+            text-decoration: underline;
+            color: yellow;
+            cursor: pointer;
+        }
+
     </style>
     <script>
+        function mostrarAlerta(contenido) {
+            alert(contenido);
+        }
+
         function toggleMenu() {
             const menu = document.querySelector('.menu-hamburguesa');
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        }
-
-        function mostrarAlerta(contenido) {
-            alert(contenido);
         }
     </script>
 </head>
 <body>
     <!-- Barra superior con el logo, texto y enlaces -->
     <div class="barra-superior">
-        <div class="logo"></div>
-        <div class="header-text">Científicos que cambiaron la historia</div>
-        <a href="TecnoPlace2.html" class="nav-link">Inicio</a>
-        <a href="albert.html" class="nav-link">Albert Einstein</a>
-        <a href="isaac.html" class="nav-link">Isaac Newton</a>
-        <a href="marie.html" class="nav-link">Marie Curie</a>
-        <a href="charles.html" class="nav-link">Charles Darwin</a>
-        <a href="gali.html" class="nav-link">Galileo Galilei</a>
-
-        <!-- Menú hamburguesa -->
+        <div style="display: flex; align-items: center;">
+            <div class="logo"></div>
+            <div class="header-text">TecnoPlace</div>
+        </div>
+        <div>
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="pagina2.html" class="nav-link">Física</a>
+            <a href="particula.html" class="nav-link">Partículas</a>
+            <a href="elctricidad.html" class="nav-link">Electricidad y Magnetismo</a>
+            <div class="menu-cientificos">
+                <a href="#" class="nav-link">Científicos &#9662;</a>
+                <div class="submenu">
+                    <a href="albert.html">Albert Einstein</a>
+                    <a href="isaac.html">Isaac Newton</a>
+                    <a href="marie.html">Marie Curie</a>
+                    <a href="charles.html">Charles Darwin</a>
+                    <a href="gali.html">Galileo Galilei</a>
+                </div>
+            </div>
+            <a href="cohetes.html" class="nav-link">Cohetes</a>
+        </div>
         <div class="hamburguesa" onclick="toggleMenu()">
             <div></div>
             <div></div>
             <div></div>
         </div>
-
         <div class="menu-hamburguesa">
-            <a href="TecnoPlace2.html">Inicio</a>
             <a href="albert.html">Albert Einstein</a>
             <a href="isaac.html">Isaac Newton</a>
             <a href="marie.html">Marie Curie</a>
