@@ -17,27 +17,68 @@
             align-items: center;
             justify-content: flex-start; /* Asegura que empiece desde arriba */
             text-align: center;
-            height: 100vh; /* Hace que el body ocupe toda la altura de la ventana */
+            height: 100%; /* No ocupa toda la altura de la ventana, solo lo necesario */
         }
-        h1, h2 {
-            font-size: 50px; /* Título en 50px */
-            margin-top: 40px;
-        }
-        .contenedor {
-            width: 80%;
+
+        /* Barra superior */
+        .barra-superior {
             display: flex;
-            justify-content: center;
-            flex-direction: column; /* Centrado de la imagen y el texto */
-            align-items: center; /* Centrado horizontal */
+            align-items: center;
+            background-color: #111; /* Negro marcado */
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
         }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .header-text {
+            font-size: 20px;
+            margin-right: 30px;
+            color: blue;
+        }
+
+        /* Estilos de los enlaces de navegación */
+        .nav-link {
+            margin: 0 15px;
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline; /* Subraya el texto al pasar el mouse */
+        }
+
+        /* Contenido principal */
+        .contenido {
+            margin-top: 70px; /* Deja espacio para la barra superior fija */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .titulo {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
         .texto {
             font-size: 18px;
             line-height: 1.6;
-            max-width: 800px; /* Ancho máximo del texto */
-            margin: 20px 0;
-            padding-left: 10px;
-            padding-right: 10px;
+            max-width: 800px;
+            margin: 0 auto;
         }
+
         .subrayado {
             text-decoration: underline;
             cursor: pointer;
@@ -46,55 +87,52 @@
         .subrayado:hover {
             color: #3498db; /* Azul más oscuro al pasar el ratón */
         }
+
         .cohetes-lista {
             margin-top: 40px;
             font-size: 18px;
-            text-align: center; /* Centra el texto de la lista de cohetes */
+            text-align: center;
             width: 80%;
         }
+
         .cohetes-lista h2 {
             font-size: 30px;
             margin-bottom: 40px;
         }
+
         .cohete {
             margin-bottom: 20px;
             padding-left: 10px;
             padding-right: 10px;
         }
 
-        /* Estilos para la barra superior */
-        .barra-superior {
-            display: flex;
-            align-items: center;
+        /* Estilo para la barra de científicos */
+        .menu-cientificos {
+            position: relative;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 30px;
             background-color: #111;
-            padding: 10px 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
+            padding: 10px;
+            border-radius: 5px;
         }
-        .logo {
-            width: 20px;
-            height: 20px;
-            background-color: blue;
-            border-radius: 50%;
-            margin-right: 10px;
+
+        .menu-cientificos:hover .submenu {
+            display: block;
         }
-        .header-text {
-            font-size: 20px;
-            margin-right: 30px;
-            color: blue;
-        }
-        .nav-link {
-            margin: 0 15px;
-            font-size: 16px;
+
+        .submenu a {
             color: white;
             text-decoration: none;
-            cursor: pointer;
+            padding: 5px 10px;
+            display: block;
         }
-        .nav-link:hover {
-            text-decoration: underline;
+
+        .submenu a:hover {
+            background-color: #333;
         }
     </style>
     <script>
@@ -131,15 +169,13 @@
     </div>
 
     <!-- Título y contenido de Cohetes -->
-    <div class="seccion">
+    <div class="contenido">
         <h1>Cohetes</h1>
-        <div class="contenedor">
-            <div class="texto">
-                <p>
-                    Los cohetes son vehículos diseñados para viajar a través del espacio. Funcionan bajo el principio de la acción y reacción, según la tercera ley de Newton, y utilizan motores de propulsión que expelen gases a alta velocidad para generar empuje. Los cohetes son fundamentales en la exploración espacial, ya que permiten lanzar satélites, naves espaciales y misiones a otros planetas.
-                    En la ingeniería de cohetes, se consideran aspectos cruciales como la <span class="subrayado" onclick="mostrarInfo('propulsion')">propulsión</span>, la <span class="subrayado" onclick="mostrarInfo('combustible')">composición del combustible</span> y las etapas del lanzamiento, entre otros factores.
-                </p>
-            </div>
+        <div class="texto">
+            <p>
+                Los cohetes son vehículos diseñados para viajar a través del espacio. Funcionan bajo el principio de la acción y reacción, según la tercera ley de Newton, y utilizan motores de propulsión que expelen gases a alta velocidad para generar empuje. Los cohetes son fundamentales en la exploración espacial, ya que permiten lanzar satélites, naves espaciales y misiones a otros planetas.
+                En la ingeniería de cohetes, se consideran aspectos cruciales como la <span class="subrayado" onclick="mostrarInfo('propulsion')">propulsión</span>, la <span class="subrayado" onclick="mostrarInfo('combustible')">composición del combustible</span> y las etapas del lanzamiento, entre otros factores.
+            </p>
         </div>
     </div>
 
