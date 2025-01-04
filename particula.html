@@ -34,7 +34,7 @@
         .header-text {
             font-size: 20px;
             margin-right: 30px;
-            color:blue;
+            color: blue;
         }
         .nav-link {
             margin: 0 15px;
@@ -64,19 +64,61 @@
             cursor: pointer;
             text-decoration: underline;
         }
+        /* Menú desplegable */
+        .menu-cientificos {
+            position: relative;
+            display: inline-block;
+        }
+
+        .menu-cientificos .submenu {
+            display: none;
+            position: absolute;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-cientificos:hover .submenu {
+            display: block;
+        }
+
+        .submenu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .submenu a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
     <!-- Barra superior con el logo, texto y enlaces -->
     <div class="barra-superior">
-        <div class="logo"></div>
-        <div class="header-text">TecnoPlace</div>
-        <a href="index.html" class="nav-link">Inicio</a>
-        <a href="pagina2.html" class="nav-link">Física</a>
-        <a href="elctricidad.html" class="nav-link">Electricidad i magnetismo</a>
-        <a href="cientificos.html" class="nav-link">Científicos y sus descubrimientos</a>
-        <a href="cohetes.html" class="nav-link">Cohetes</a>
+        <div style="display: flex; align-items: center;">
+            <div class="logo"></div>
+            <div class="header-text">TecnoPlace</div>
+        </div>
+        <div>
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="pagina2.html" class="nav-link">Física</a>
+            <a href="elctricidad.html" class="nav-link">Electricidad y Magnetismo</a>
+            <div class="menu-cientificos">
+                <a href="#" class="nav-link">Científicos &#9662;</a>
+                <div class="submenu">
+                    <a href="albert.html">Albert Einstein</a>
+                    <a href="isaac.html">Isaac Newton</a>
+                    <a href="marie.html">Marie Curie</a>
+                    <a href="charles.html">Charles Darwin</a>
+                    <a href="gali.html">Galileo Galilei</a>
+                </div>
+            </div>
+            <a href="cohetes.html" class="nav-link">Cohetes</a>
+        </div>
     </div>
 
     <!-- Contenido principal -->
