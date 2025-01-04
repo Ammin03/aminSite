@@ -54,6 +54,82 @@
             text-decoration: underline; /* Subraya el texto al pasar el mouse */
         }
 
+        /* Menú desplegable */
+        .menu-cientificos {
+            position: relative;
+            display: inline-block;
+        }
+
+        .menu-cientificos .submenu {
+            display: none;
+            position: absolute;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-cientificos:hover .submenu {
+            display: block;
+        }
+
+        .submenu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .submenu a:hover {
+            text-decoration: underline;
+        }
+
+        /* Menú hamburguesa */
+        .hamburguesa {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburguesa div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        .menu-hamburguesa {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-hamburguesa a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .menu-hamburguesa a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-link {
+                display: none;
+            }
+
+            .hamburguesa {
+                display: flex;
+            }
+        }
+
         /* Estilo del contenido */
         .contenido {
             margin-top: 70px; /* Deja espacio para la barra superior fija */
@@ -84,19 +160,49 @@
         function mostrarAlerta(contenido) {
             alert(contenido);
         }
+
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-hamburguesa');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
     </script>
 </head>
 <body>
     <!-- Barra superior con el logo, texto y enlaces -->
     <div class="barra-superior">
-        <div class="logo"></div>
-        <div class="header-text">Científicos que cambiaron la historia</div>
-        <a href="TecnoPlace2.html" class="nav-link">Inicio</a>
-        <a href="albert.html" class="nav-link">Albert Einstein</a>
-        <a href="isaac.html" class="nav-link">Isaac Newton</a>
-        <a href="marie.html" class="nav-link">Marie Curie</a>
-        <a href="charles.html" class="nav-link">Charles Darwin</a>
-        <a href="gali.html" class="nav-link">Galileo Galilei</a>
+        <div style="display: flex; align-items: center;">
+            <div class="logo"></div>
+            <div class="header-text">TecnoPlace</div>
+        </div>
+        <div>
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="pagina2.html" class="nav-link">Física</a>
+            <a href="particula.html" class="nav-link">Partículas</a>
+            <a href="elctricidad.html" class="nav-link">Electricidad y Magnetismo</a>
+            <div class="menu-cientificos">
+                <a href="#" class="nav-link">Científicos &#9662;</a>
+                <div class="submenu">
+                    <a href="albert.html">Albert Einstein</a>
+                    <a href="isaac.html">Isaac Newton</a>
+                    <a href="marie.html">Marie Curie</a>
+                    <a href="charles.html">Charles Darwin</a>
+                    <a href="gali.html">Galileo Galilei</a>
+                </div>
+            </div>
+            <a href="cohetes.html" class="nav-link">Cohetes</a>
+        </div>
+        <div class="hamburguesa" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu-hamburguesa">
+            <a href="albert.html">Albert Einstein</a>
+            <a href="isaac.html">Isaac Newton</a>
+            <a href="marie.html">Marie Curie</a>
+            <a href="charles.html">Charles Darwin</a>
+            <a href="gali.html">Galileo Galilei</a>
+        </div>
     </div>
 
     <!-- Contenido principal -->
@@ -105,3 +211,6 @@
         <div class="texto">
             Isaac Newton, nacido el <span class="highlight" onclick="mostrarAlerta('El 4 de enero de 1643 es la fecha de nacimiento de Newton, en Woolsthorpe, Inglaterra.')">4 de enero de 1643</span> en <span class="highlight" onclick="mostrarAlerta('Woolsthorpe es una aldea en Inglaterra donde nació Newton.')">Woolsthorpe, Inglaterra</span>, es uno de los científicos más influyentes de la historia. Su obra abarca diversas áreas de la ciencia, incluyendo la <span class="highlight" onclick="mostrarAlerta('La física es la ciencia que estudia las propiedades del espacio, el tiempo y la materia.')">física</span>, las <span class="highlight" onclick="mostrarAlerta('Las matemáticas son fundamentales en los descubrimientos de Newton, como el cálculo.')">matemáticas</span> y la <span class="highlight" onclick="mostrarAlerta('La astronomía es la ciencia que estudia los cuerpos celestes y el universo en su totalidad.')">astronomía</span>. Newton es famoso por descubrir la <span class="highlight" onclick="mostrarAlerta('Newton descubrió la gravedad cuando observó caer una manzana, desarrollando la ley de la gravitación universal.')">gravedad</span>.
         </div>
+    </div>
+</body>
+</html>
