@@ -3,42 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de Operaciones</title>
+    <title>Juego de Operaciones Matemáticas</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <h1>Juego de Operaciones Matemáticas</h1>
-    <div id="juego">
-        <p id="pregunta">Haz clic en "Nueva Pregunta" para empezar.</p>
-        <input type="number" id="respuesta" placeholder="Tu respuesta" />
-        <button onclick="verificar()">Verificar</button>
-        <p id="resultado"></p>
-        <button onclick="nuevaPregunta()">Nueva Pregunta</button>
-    </div>
+    <p id="pregunta">Haz clic en "Nueva Pregunta" para empezar.</p>
+    <input type="number" id="respuesta" placeholder="Tu respuesta" />
+    <button id="verificar">Verificar</button>
+    <button id="nuevaPregunta">Nueva Pregunta</button>
+    <p id="resultado"></p>
 
-    <script>
-        let respuestaCorrecta = null;
+    <py-script>
+        import random
 
-        async function nuevaPregunta() {
-            const res = await fetch('http://localhost:5000/api/pregunta');
-            const data = await res.json();
+        # Variables globales
+        pregunta_actual = ""
+        respuesta_correcta = 0
 
-            document.getElementById('pregunta').innerText = `¿Cuánto es ${data.pregunta}?`;
-            respuestaCorrecta = data.respuesta;
-            document.getElementById('resultado').innerText = ''; // Limpia el resultado anterior
-        }
+        def generar_pregunta():
+            global pregunta_actual, respuesta_correcta
+            operadores = ['+', '-', '*', '/']
+            operador = random.choice(operadores)
+            num1 = random.randint(1, 10)
+            num2 = random.randint(1, 10)
 
-        function verificar() {
-            const respuestaUsuario = parseFloat(document.getElementById('respuesta').value);
-            const resultado = document.getElementById('resultado');
+            # Asegurarse de que no haya división por cero
+            if operador == '/':
+                num1 = num1 * num2  # Garantiza que sea una división exacta
 
-            if (respuestaUsuario === respuestaCorrecta) {
-                resultado.innerText = '¡Correcto!';
-                resultado.style.color = 'green';
-            } else {
-                resultado.innerText = `Incorrecto. La respuesta correcta era ${respuestaCorrecta}.`;
-                resultado.style.color = 'red';
-            }
-        }
-    </script>
+            pregunta_actual = f"{num1} {operador} {num2}"
+            respuesta_correcta = round(eval(pregunta_actual), 2)
+
+            # Muestra la pregunta en la página
+            pregunta_element = Element("pregunta")
+            pregunta_element.element.innerText = f"¿Cuánto es {pregunta_actual}?"
+
+        def verificar_respuesta(*args):
+            # Obtiene la respuesta del usuario
+            respuesta_usuario = float(Element("respuesta").element.value)
+            resultado_element = Element("resultado")
+
+            # Verifica si es correcta o incorrecta
+            if respuesta_usuario == respuesta_correcta:
+                resultado_element.element.innerText = "¡Correcto!"
+                resultado_element.element.style.color = "green"
+            else:
+                resultado_element.element.innerText = f"Incorrecto. La respuesta era {respuesta_correcta}."
+                resultado_element.element.style.color = "red"
+
+        # Conecta los botones a las funciones
+        Element("nuevaPregunta").element.onclick = generar_pregunta
+        Element("verificar").element.onclick = verificar_respuesta
+    </py-script>
 </body>
 </html>
