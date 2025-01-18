@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego de Operaciones Matemáticas</title>
+    <!-- Enlace a PyScript -->
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <!-- Estilos personalizados -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,12 +46,17 @@
 </head>
 <body>
     <h1>Juego de Operaciones Matemáticas</h1>
+    <!-- Pregunta -->
     <p id="pregunta">Haz clic en "Nueva Pregunta" para empezar.</p>
+    <!-- Input para la respuesta -->
     <input type="number" id="respuesta" placeholder="Tu respuesta" />
+    <!-- Botones -->
     <button id="verificar">Verificar</button>
     <button id="nuevaPregunta">Nueva Pregunta</button>
+    <!-- Resultado -->
     <p id="resultado"></p>
 
+    <!-- PyScript para el juego -->
     <py-script>
         import random
 
@@ -57,6 +64,7 @@
         pregunta_actual = ""
         respuesta_correcta = 0
 
+        # Función para generar una nueva pregunta
         def generar_pregunta():
             global pregunta_actual, respuesta_correcta
             operadores = ['+', '-', '*', '/']
@@ -68,19 +76,29 @@
             if operador == '/':
                 num1 = num1 * num2  # Garantiza que sea una división exacta
 
+            # Generar la pregunta y calcular la respuesta
             pregunta_actual = f"{num1} {operador} {num2}"
             respuesta_correcta = round(eval(pregunta_actual), 2)
 
-            # Muestra la pregunta en la página
-            pregunta_element = Element("pregunta")
-            pregunta_element.element.innerText = f"¿Cuánto es {pregunta_actual}?"
+            # Mostrar la pregunta en el elemento HTML
+            Element("pregunta").element.innerText = f"¿Cuánto es {pregunta_actual}?"
 
+        # Función para verificar la respuesta del usuario
         def verificar_respuesta(*args):
-            # Obtiene la respuesta del usuario
-            respuesta_usuario = float(Element("respuesta").element.value)
+            # Obtener el valor ingresado por el usuario
+            respuesta_usuario = Element("respuesta").element.value
             resultado_element = Element("resultado")
 
-            # Verifica si es correcta o incorrecta
+            # Validar que el usuario haya ingresado algo
+            if not respuesta_usuario:
+                resultado_element.element.innerText = "Por favor, ingresa una respuesta."
+                resultado_element.element.style.color = "orange"
+                return
+
+            # Convertir la respuesta a flotante
+            respuesta_usuario = float(respuesta_usuario)
+
+            # Comparar la respuesta del usuario con la correcta
             if respuesta_usuario == respuesta_correcta:
                 resultado_element.element.innerText = "¡Correcto!"
                 resultado_element.element.style.color = "green"
@@ -88,7 +106,7 @@
                 resultado_element.element.innerText = f"Incorrecto. La respuesta era {respuesta_correcta}."
                 resultado_element.element.style.color = "red"
 
-        # Conecta los botones a las funciones
+        # Conectar las funciones a los botones
         Element("nuevaPregunta").element.onclick = generar_pregunta
         Element("verificar").element.onclick = verificar_respuesta
     </py-script>
