@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Operaciones</title>
+</head>
+<body>
+    <h1>Juego de Operaciones Matemáticas</h1>
+    <div id="juego">
+        <p id="pregunta">Haz clic en "Nueva Pregunta" para empezar.</p>
+        <input type="number" id="respuesta" placeholder="Tu respuesta" />
+        <button onclick="verificar()">Verificar</button>
+        <p id="resultado"></p>
+        <button onclick="nuevaPregunta()">Nueva Pregunta</button>
+    </div>
+
+    <script>
+        let respuestaCorrecta = null;
+
+        async function nuevaPregunta() {
+            const res = await fetch('http://localhost:5000/api/pregunta');
+            const data = await res.json();
+
+            document.getElementById('pregunta').innerText = `¿Cuánto es ${data.pregunta}?`;
+            respuestaCorrecta = data.respuesta;
+            document.getElementById('resultado').innerText = ''; // Limpia el resultado anterior
+        }
+
+        function verificar() {
+            const respuestaUsuario = parseFloat(document.getElementById('respuesta').value);
+            const resultado = document.getElementById('resultado');
+
+            if (respuestaUsuario === respuestaCorrecta) {
+                resultado.innerText = '¡Correcto!';
+                resultado.style.color = 'green';
+            } else {
+                resultado.innerText = `Incorrecto. La respuesta correcta era ${respuestaCorrecta}.`;
+                resultado.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
