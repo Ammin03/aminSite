@@ -1,5 +1,7 @@
-
+from flask import Flask, render_template, request, jsonify
 import random
+
+app = Flask(__name__)
 
 def generar_pregunta():
     """
@@ -20,46 +22,29 @@ def generar_pregunta():
 
     return pregunta, respuesta_correcta
 
-def jugar():
+@app.route('/')
+def index():
+    return render_template('index.html')  # HTML file to display the game
+
+@app.route('/pregunta', methods=['GET'])
+def pregunta():
     """
-    Función principal del juego. El usuario puede responder preguntas matemáticas hasta que decida salir.
+    Endpoint para generar una pregunta matemática.
     """
-    print("¡Bienvenido al Juego de Operaciones Matemáticas!")
-    print("Resuelve las operaciones que se generarán aleatoriamente.")
-    print("Escribe 'salir' en cualquier momento para terminar el juego.\n")
+    pregunta, respuesta_correcta = generar_pregunta()
+    return jsonify({'pregunta': pregunta, 'respuesta_correcta': respuesta_correcta})
 
-    puntuacion = 0
-    intentos = 0
+@app.route('/verificar', methods=['POST'])
+def verificar():
+    """
+    Endpoint para verificar la respuesta enviada por el usuario.
+    """
+    data = request.json
+    respuesta_usuario = float(data.get('respuesta_usuario'))
+    respuesta_correcta = float(data.get('respuesta_correcta'))
 
-    while True:
-        # Generar una nueva pregunta
-        pregunta, respuesta_correcta = generar_pregunta()
+    es_correcta = respuesta_usuario == respuesta_correcta
+    return jsonify({'es_correcta': es_correcta})
 
-        # Mostrar la pregunta
-        print(f"¿Cuánto es {pregunta}?")
-        respuesta_usuario = input("Tu respuesta: ")
-
-        # Permitir al usuario salir
-        if respuesta_usuario.lower() == 'salir':
-            print("\n¡Gracias por jugar!")
-            print(f"Tu puntuación final: {puntuacion}/{intentos}")
-            break
-
-        try:
-            # Convertir la respuesta a número
-            respuesta_usuario = float(respuesta_usuario)
-        except ValueError:
-            print("Por favor, ingresa un número válido.\n")
-            continue
-
-        # Comparar la respuesta con la correcta
-        if respuesta_usuario == respuesta_correcta:
-            print("¡Correcto! 🎉\n")
-            puntuacion += 1
-        else:
-            print(f"Incorrecto. La respuesta era {respuesta_correcta}.\n")
-
-        intentos += 1
-
-if __name__ == "__main__":
-    jugar()
+if __name__ == '__main__':
+    app.run(debug=True)
